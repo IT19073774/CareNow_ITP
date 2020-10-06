@@ -117,6 +117,11 @@ public class CareNowController2 {
 	Optional<Employee> getEmployee(@PathVariable int id) {
 		return employeeServices.findById(id);
 	}
+
+	@PostMapping(path = "/saveDeliverer")
+	public Employee saveDeliverer(@RequestBody Employee deliverer) {
+		return employeeService.save(deliverer);
+	}
 	
 ///////////////////////////////////////////////////////////////////////////////
 	
@@ -128,5 +133,6 @@ public class CareNowController2 {
 	}
 
 ///////////////////////////////////////////////////////////////////////////////
+
 	
 }
