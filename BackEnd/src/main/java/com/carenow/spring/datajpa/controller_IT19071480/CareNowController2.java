@@ -32,6 +32,11 @@ public class CareNowController2 {
 		return drugServices.findByDrugName(name);
 	}	
 
+	@GetMapping(path ="/drugs")
+	<List<Drug>> getDrugs() {
+		return drugServices.findAllDrugs();
+	}
+
 ////////////////////////////////////////////////////////////////////////////////
 	
 	@Autowired
