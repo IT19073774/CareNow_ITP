@@ -45,7 +45,12 @@ public class CareNowController2 {
 	@GetMapping(path ="/getPrescriptions")
 	public List<Prescription> getPrescriptions() {
 		
-		return prescriptionServices.findAll();
+		return prescriptionServices.findByStatus("PENDING");
+	}
+	
+	@PutMapping(path ="/updatePrescriptions")
+	public Prescription updatePrescriptions(@RequestBody Prescription pres) {
+		return prescriptionServices.save(pres);
 	}
 	
 	

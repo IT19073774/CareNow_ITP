@@ -21,7 +21,16 @@ public class Prescription {
 	private String docFee;
 	private String drugs;
 	private String prescriptionDate;
+	private String status;
 	
+	
+	
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
+	}
 	public int getPrescriptionId() {
 		return prescriptionId;
 	}
