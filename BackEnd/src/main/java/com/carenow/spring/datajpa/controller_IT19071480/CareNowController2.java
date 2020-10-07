@@ -33,8 +33,8 @@ public class CareNowController2 {
 	}	
 
 	@GetMapping(path ="/drugs")
-	<List<Drug>> getDrugs() {
-		return drugServices.findAllDrugs();
+	List<Drug> getDrugs() {
+		return drugServices.findAll();
 	}
 
 ////////////////////////////////////////////////////////////////////////////////
