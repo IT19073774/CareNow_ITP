@@ -39,6 +39,7 @@ public class CareNowController3 {
 		return employeeServices.save(receptionist);
 	}
 	
+	
 	@PutMapping(path = "/updateReceptionist")
 	public Employee updateReceptionist(@RequestBody Employee receptionist) {
 		return employeeServices.save(receptionist);
