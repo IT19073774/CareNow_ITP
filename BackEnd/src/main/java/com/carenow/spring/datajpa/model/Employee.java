@@ -9,39 +9,118 @@ public class Employee {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "EmployeeId")
-	Integer EmployeeId;
+	Integer employeeId;
 	
-	@Column(name = "FirstName")
-	String FirstName;
+	@Column(name = "firstName")
+	String firstName;
 	
 	@Column(name = "LastName")
-	String LastName;
+	String lastName;
 	
 	@Column(name = "NIC")
-	String NIC;
+	String nic;
 	
 	@Column(name = "ContactNo")
-	String ContactNo;
+	String contactNo;
 	
 	@Column(name = "Address")
-	String Address;
+	String address;
 	
 	@Column(name = "Gender")
-	String Gender;
+	String gender;
 	
 	@Column(name = "DOB")
-	String DOB;
+	String dob;
 	
 	@Column(name = "Email")
-	String Email;
+	String email;
 
 	@Column(name = "HiredDate")
-	String HiredDate;
+	String hiredDate;
 	
 	@Column(name = "Type")
 	String type;
 
-	
+	public Integer getEmployeeId() {
+		return employeeId;
+	}
+
+	public void setEmployeeId(Integer employeeId) {
+		this.employeeId = employeeId;
+	}
+
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+	public String getNic() {
+		return nic;
+	}
+
+	public void setNic(String nic) {
+		this.nic = nic;
+	}
+
+	public String getContactNo() {
+		return contactNo;
+	}
+
+	public void setContactNo(String contactNo) {
+		this.contactNo = contactNo;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public String getGender() {
+		return gender;
+	}
+
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+
+	public String getDob() {
+		return dob;
+	}
+
+	public void setDob(String dob) {
+		this.dob = dob;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getHiredDate() {
+		return hiredDate;
+	}
+
+	public void setHiredDate(String hiredDate) {
+		this.hiredDate = hiredDate;
+	}
+
 	public String getType() {
 		return type;
 	}
@@ -50,85 +129,7 @@ public class Employee {
 		this.type = type;
 	}
 
-	public Integer getEmployeeId() {
-		return EmployeeId;
-	}
-
-	public void setEmployeeId(Integer employeeId) {
-		EmployeeId = employeeId;
-	}
-
-	public String getFirstName() {
-		return FirstName;
-	}
-
-	public void setFirstName(String firstName) {
-		FirstName = firstName;
-	}
-
-	public String getLastName() {
-		return LastName;
-	}
-
-	public void setLastName(String lastName) {
-		LastName = lastName;
-	}
-
-	public String getNIC() {
-		return NIC;
-	}
-
-	public void setNIC(String nIC) {
-		NIC = nIC;
-	}
-
-	public String getContactNo() {
-		return ContactNo;
-	}
-
-	public void setContactNo(String contactNo) {
-		ContactNo = contactNo;
-	}
-
-	public String getAddress() {
-		return Address;
-	}
-
-	public void setAddress(String address) {
-		Address = address;
-	}
-
-	public String getGender() {
-		return Gender;
-	}
-
-	public void setGender(String gender) {
-		Gender = gender;
-	}
-
-	public String getDOB() {
-		return DOB;
-	}
-
-	public void setDOB(String dOB) {
-		DOB = dOB;
-	}
-
-	public String getEmail() {
-		return Email;
-	}
-
-	public void setEmail(String email) {
-		Email = email;
-	}
-
-	public String getHiredDate() {
-		return HiredDate;
-	}
-
-	public void setHiredDate(String hiredDate) {
-		HiredDate = hiredDate;
-	}
+	
 
 	
 }

@@ -6,14 +6,15 @@ import com.carenow.spring.datajpa.model.*;
 
 import java.util.List;
 
+import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 @Repository
 public interface EmployeeServices extends JpaRepository<Employee, Integer> {
 
+	List<Employee> findByType(String string, Sort sort);
+	
 	List<Employee> findByType(String string);
-	
-	
 }
 	
 
