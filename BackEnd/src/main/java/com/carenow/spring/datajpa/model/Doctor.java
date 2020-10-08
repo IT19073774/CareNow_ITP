@@ -13,49 +13,51 @@ public class Doctor {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "DoctorId")
-	Integer DoctorId;
+	Integer doctorId;
 	
 	@Column(name = "EmployeeId")
-	String EmployeeId;
+	String employeeId;
 	
 	@Column(name = "Education")
-	String Education;
+	String education;
 	
 	@Column(name = "Color")
-	String Color;
-
-	
-	
-	public String getColor() {
-		return Color;
-	}
-
-	public void setColor(String color) {
-		Color = color;
-	}
+	String color;
 
 	public Integer getDoctorId() {
-		return DoctorId;
+		return doctorId;
 	}
 
 	public void setDoctorId(Integer doctorId) {
-		DoctorId = doctorId;
+		this.doctorId = doctorId;
 	}
 
 	public String getEmployeeId() {
-		return EmployeeId;
+		return employeeId;
 	}
 
 	public void setEmployeeId(String employeeId) {
-		EmployeeId = employeeId;
+		this.employeeId = employeeId;
 	}
 
 	public String getEducation() {
-		return Education;
+		return education;
 	}
 
 	public void setEducation(String education) {
-		Education = education;
+		this.education = education;
 	}
+
+	public String getColor() {
+		return color;
+	}
+
+	public void setColor(String color) {
+		this.color = color;
+	}
+
+	
+	
+	
 
 }
