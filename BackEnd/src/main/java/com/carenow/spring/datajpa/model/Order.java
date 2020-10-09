@@ -1,4 +1,4 @@
-package com.supord.model;
+package com.carenow.spring.datajpa.model;
 
 import java.util.Date;
 
