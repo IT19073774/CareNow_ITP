@@ -15,16 +15,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.carenow.spring.datajpa.model.DrugInsructions;
-import com.carenow.spring.datajpa.model.Drugsearch;
-import com.carenow.spring.datajpa.model.PatientRecords;
-import com.carenow.spring.datajpa.model.PrescriptionDetails;
-import com.carenow.spring.datajpa.model.Reorder;
-import com.carenow.spring.datajpa.repository_IT19056494.DrugInsructionsServices;
-import com.carenow.spring.datajpa.repository_IT19056494.DrugSerachServices;
-import com.carenow.spring.datajpa.repository_IT19056494.PatientRecordServices;
-import com.carenow.spring.datajpa.repository_IT19056494.PrescriptionDetailsServices;
-import com.carenow.spring.datajpa.repository_IT19056494.ReorderServices;
+import com.carenow.spring.datajpa.model.*;
+import com.carenow.spring.datajpa.repository_IT19056494.*;
+import com.carenow.spring.datajpa.repository_IT19071480.*;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:4200")
@@ -60,27 +53,27 @@ public class CareNowController5 {
 ///////////////////////////////// Prescription Details ///////////////////////////////////////////////	
 
 	@Autowired
-	PrescriptionDetailsServices presdetailsservice;
+	PrescriptionServices prescriptionServices;
 	
 	@GetMapping(path ="/all-Pres")
-	 List<PrescriptionDetails> allPres() {
-		return presdetailsservice.findAll();
+	 List<Prescription> allPres() {
+		return prescriptionServices.findAll();
 	}
 	
 	@PostMapping(path ="/add-Pres")
-	ResponseEntity<PrescriptionDetails> savePres(@RequestBody PrescriptionDetails prdata) {
-		PrescriptionDetails Pres_ = presdetailsservice.save(prdata);
-		return new ResponseEntity<PrescriptionDetails>(Pres_, HttpStatus.OK);
+	ResponseEntity<Prescription> savePres(@RequestBody Prescription prdata) {
+		Prescription Pres_ = prescriptionServices.save(prdata);
+		return new ResponseEntity<Prescription>(Pres_, HttpStatus.OK);
 	}
 	
 	@GetMapping(path ="/find_Pres/{id}")
-	Optional<PrescriptionDetails> getPres(@PathVariable int id) {
-		return presdetailsservice.findById(id);
+	Optional<Prescription> getPres(@PathVariable int id) {
+		return prescriptionServices.findById(id);
 	}
 	
 	@DeleteMapping(path ="/delete_Pres/{id}")
 	 ResponseEntity<String> deletepres(@PathVariable("id") Integer id) {
-		presdetailsservice.deleteById(id);
+		prescriptionServices.deleteById(id);
 		return new ResponseEntity<String>("Pres deleted", HttpStatus.OK);
 	}
 	
@@ -88,36 +81,34 @@ public class CareNowController5 {
 ///////////////////////////////// Reorder ///////////////////////////////////////////////	
 	
 	@Autowired
-	ReorderServices reorderservice;
+	OnlineOrderServices onlineOrderServices;
 	
 	@GetMapping(path ="/allReorders")
-	 List<Reorder> allReorders() {
-		return reorderservice.findAll();
+	 List<OnlineOrder> allReorders() {
+		return onlineOrderServices.findAll();
 	}
 	
 	@PostMapping(path ="/addReorders")
-	ResponseEntity<Reorder> savereorder(@RequestBody Reorder prdata) {
-		Reorder reorder_ = reorderservice.save(prdata);
-		return new ResponseEntity<Reorder>(reorder_, HttpStatus.OK);
+	ResponseEntity<OnlineOrder> savereorder(@RequestBody OnlineOrder prdata) {
+		OnlineOrder reorder_ = onlineOrderServices.save(prdata);
+		return new ResponseEntity<OnlineOrder>(reorder_, HttpStatus.OK);
 	}
 	
 ///////////////////////////////// Drug Search ///////////////////////////////////////////////	
 	
 	
 	@Autowired
-	DrugSerachServices drugsearchservice;
+	DrugServices drugServices;
 	
 	@GetMapping(path ="/all-DS")
-	 List<Drugsearch> alldrugsearch() {
-		return drugsearchservice.findAll();
+	 List<Drug> alldrugsearch() {
+		return drugServices.findAll();
 	}
 	
 ///////////////////////////////// Drug Instructions ///////////////////////////////////////////////		
 	
-	
 	@Autowired
 	DrugInsructionsServices drugInsructionsservices;
-	
 	
 	@GetMapping(path ="/all-TD")
 	 List<DrugInsructions> allTDs() {
