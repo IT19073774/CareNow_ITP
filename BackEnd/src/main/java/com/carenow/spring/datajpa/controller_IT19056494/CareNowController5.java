@@ -126,11 +126,12 @@ public class CareNowController5 {
 		return drugInsructionsservices.findById(id);
 	}
 	
+	
 	@DeleteMapping(path ="/delete_TD/{id}")
-	 ResponseEntity<String> deleteTD(@PathVariable("id") Integer id) {
+	void deleteTD(@PathVariable int id) {
 		drugInsructionsservices.deleteById(id);
-		return new ResponseEntity<String>("TD deleted", HttpStatus.OK);
 	}
+	
 	
 	@DeleteMapping("/clear_TD")
 	 ResponseEntity<String> clearTD() {
