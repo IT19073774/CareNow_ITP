@@ -1,5 +1,7 @@
 package com.carenow.spring.datajpa.model;
 
+import java.sql.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -16,7 +18,7 @@ public class Drug {
 	private int drugId;
 	private String drugName;
 	private String drugQuantity;
-	private String drugExpDate;
+	private Date drugExpDate;
 	
 	public int getDrugId() {
 		return drugId;
@@ -36,10 +38,10 @@ public class Drug {
 	public void setDrugQuantity(String drugQuantity) {
 		this.drugQuantity = drugQuantity;
 	}
-	public String getDrugExpDate() {
+	public Date getDrugExpDate() {
 		return drugExpDate;
 	}
-	public void setDrugExpDate(String drugExpDate) {
+	public void setDrugExpDate(Date drugExpDate) {
 		this.drugExpDate = drugExpDate;
 	}
 	
