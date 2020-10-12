@@ -58,7 +58,7 @@ public class CareNowController4 {
 	
 	@GetMapping(path = "/getPharmacist")
 	List<Employee> getPharmacist() {
-		return employeeServices.findByType("CASHIER");
+		return employeeServices.findByType("PHARMACIST");
 	}
 	
 	@PostMapping(path = "/savePharmacist")

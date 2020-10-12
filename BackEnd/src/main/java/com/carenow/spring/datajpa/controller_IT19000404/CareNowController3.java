@@ -22,6 +22,7 @@ import com.carenow.spring.datajpa.repository_IT19073774.*;
 
 @RestController
 @CrossOrigin(origins = "*", allowedHeaders = "*")
+
 public class CareNowController3 {
 	
 ////////////////////////////////////////////////////////////////////////////////
@@ -68,10 +69,11 @@ public class CareNowController3 {
 		return employeeServices.findByType("CASHIER");
 	}
 	
-	@PostMapping(path = "/saveCashier")
-	public Employee saveCashier(@RequestBody Employee cashier) {
+	@PostMapping(path = "/saveCashier/{password}")
+	public Employee saveCashier(@RequestBody Employee cashier, @PathVariable String password) {
 		return employeeServices.save(cashier);
 	}
+	
 	
 	@PutMapping(path = "/updateCashier")
 	public Employee updateCashier(@RequestBody Employee cashier) {
@@ -90,8 +92,7 @@ public class CareNowController3 {
 		else if (order.equals("DESC")) 
 			return employeeServices.findByType("CASHIER",Sort.by(Sort.Direction.DESC,attribute));
 		else 
-			return null;
-			
+			return null;	
 	}
 ////////////////////////////////////////////////////////////////////////////////
 
