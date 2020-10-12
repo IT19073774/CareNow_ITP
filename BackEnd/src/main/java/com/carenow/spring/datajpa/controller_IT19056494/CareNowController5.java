@@ -20,7 +20,7 @@ import com.carenow.spring.datajpa.repository_IT19056494.*;
 import com.carenow.spring.datajpa.repository_IT19071480.*;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RequestMapping("/api")
 public class CareNowController5 {
 	
@@ -40,9 +40,8 @@ public class CareNowController5 {
 	}
 	
 	@DeleteMapping(path ="/delete_PR/{id}")
-	 ResponseEntity<String> delete(@PathVariable("id") Integer id) {
+	void deletePR(@PathVariable Integer id) {
 		prservices.deleteById(id);
-		return new ResponseEntity<String>("PR deleted", HttpStatus.OK);
 	}
 	
 	@GetMapping(path ="/find_PR/{id}")
@@ -78,6 +77,8 @@ public class CareNowController5 {
 	}
 	
 	
+	
+	
 ///////////////////////////////// Reorder ///////////////////////////////////////////////	
 	
 	@Autowired
@@ -87,6 +88,7 @@ public class CareNowController5 {
 	 List<OnlineOrder> allReorders() {
 		return onlineOrderServices.findAll();
 	}
+
 	
 	@PostMapping(path ="/addReorders")
 	ResponseEntity<OnlineOrder> savereorder(@RequestBody OnlineOrder prdata) {
