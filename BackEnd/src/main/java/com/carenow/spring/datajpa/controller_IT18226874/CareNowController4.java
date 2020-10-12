@@ -27,7 +27,7 @@ public class CareNowController4 {
 	
 	@GetMapping(path = "/getStockManager")
 	List<Employee> getStockManager() {
-		return employeeServices.findByType("STOCKMANAGER");
+		return employeeServices.findByType("STOCK MANAGER");
 	}
 	
 	@PostMapping(path = "/saveStockManager")
@@ -48,9 +48,9 @@ public class CareNowController4 {
 	@GetMapping(path = "/sortStockManager/{attribute}/{order}")
 	List<Employee> sortStockManager(@PathVariable String attribute, @PathVariable String order) {
 		if (order.equals("ASC")) 
-			return employeeServices.findByType("STOCKMANAGER",Sort.by(Sort.Direction.ASC,attribute));
+			return employeeServices.findByType("STOCK MANAGER",Sort.by(Sort.Direction.ASC,attribute));
 		else if (order.equals("DESC")) 
-			return employeeServices.findByType("STOCKMANAGER",Sort.by(Sort.Direction.DESC,attribute));
+			return employeeServices.findByType("STOCK MANAGER",Sort.by(Sort.Direction.DESC,attribute));
 		else 
 			return null;
 			
