@@ -2,6 +2,7 @@ package com.carenow.spring.datajpa.model;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -15,15 +16,34 @@ public class Prescription {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	
+	@Column(name ="prescriptionId")
 	private int prescriptionId;
+	
+	@Column(name ="patientId")
 	private Integer patientId;
+	
+	@Column(name ="doctorID")
 	private Integer doctorID;
+	
+	@Column(name ="patientName")
 	private String patientName;
+	
+	@Column(name ="patientAge")
 	private Integer patientAge;
+	
+	@Column(name ="docFee")
 	private Integer docFee;
+	
+	@Column(name ="drugs")
 	private String drugs;
+	
+	@Column(name ="prescriptionDate")
 	private Date prescriptionDate;
+	
+	@Column(name ="status")
 	private String status;
+	
 	public int getPrescriptionId() {
 		return prescriptionId;
 	}
