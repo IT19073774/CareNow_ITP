@@ -32,7 +32,7 @@ public class Employee {
 	@Column(name = "DOB")
 	String dob;
 	
-	@Column(name = "Email")
+	@Column(name = "email")
 	String email;
 
 	@Column(name = "HiredDate")
