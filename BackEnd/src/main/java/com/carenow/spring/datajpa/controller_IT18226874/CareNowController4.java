@@ -33,8 +33,8 @@ public class CareNowController4 {
 	@PostMapping(path = "/saveStockManager")
 	public Employee saveStockManager(@RequestBody Employee stockManager) {
 		return employeeServices.save(stockManager);
-	}
-	
+		}
+		
 	@PutMapping(path = "/updateStockManager")
 	public Employee updateStockManager(@RequestBody Employee stockManager) {
 		return employeeServices.save(stockManager);
@@ -61,8 +61,10 @@ public class CareNowController4 {
 		return employeeServices.findByType("PHARMACIST");
 	}
 	
-	@PostMapping(path = "/savePharmacist")
-	public Employee savePharmacist(@RequestBody Employee pharmacist) {
+	@PostMapping(path = "/savePharmacist/{password}")
+	public Employee savePharmacist(@RequestBody Employee pharmacist,@PathVariable String password) {
+		
+		//addLogin(pharmacist.getEmail(), password);
 		return employeeServices.save(pharmacist);
 	}
 	
@@ -88,4 +90,14 @@ public class CareNowController4 {
 	}
 
 ////////////////////////////////////////////////////////////////////////////////
+	
+	LoginServices loginServices;
+
+	Login addLogin(String email, String psw) {
+		Login cred = new Login();
+		cred.setEmail(email);
+		cred.setPassword(psw);
+		return loginServices.save(cred);
+	}
+	
 }
