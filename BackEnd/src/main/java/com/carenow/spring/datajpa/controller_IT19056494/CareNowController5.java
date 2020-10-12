@@ -40,9 +40,8 @@ public class CareNowController5 {
 	}
 	
 	@DeleteMapping(path ="/delete_PR/{id}")
-	 ResponseEntity<String> delete(@PathVariable("id") Integer id) {
+	void deletePR(@PathVariable Integer id) {
 		prservices.deleteById(id);
-		return new ResponseEntity<String>("PR deleted", HttpStatus.OK);
 	}
 	
 	@GetMapping(path ="/find_PR/{id}")
@@ -76,6 +75,8 @@ public class CareNowController5 {
 		prescriptionServices.deleteById(id);
 		return new ResponseEntity<String>("Pres deleted", HttpStatus.OK);
 	}
+	
+	
 	
 	
 ///////////////////////////////// Reorder ///////////////////////////////////////////////	
