@@ -30,12 +30,12 @@ public class CareNowController4 {
 		return employeeServices.findByType("STOCK MANAGER");
 	}
 	
-	@PostMapping(path = "/saveStockManager")
-	public Employee saveStockManager(@RequestBody Employee stockManager) {
+	@PostMapping(path = "/saveStockManager/{password}")
+	public Employee saveStockManager(@RequestBody Employee stockManager,@PathVariable String password) {
 		return employeeServices.save(stockManager);
 		}
 		
-	@PutMapping(path = "/updateStockManager")
+	@PostMapping(path = "/updateStockManager")
 	public Employee updateStockManager(@RequestBody Employee stockManager) {
 		return employeeServices.save(stockManager);
 	}
@@ -68,7 +68,7 @@ public class CareNowController4 {
 		return employeeServices.save(pharmacist);
 	}
 	
-	@PutMapping(path = "/updatePharmacist")
+	@PostMapping(path = "/updatePharmacist")
 	public Employee updatePharmacist(@RequestBody Employee pharmacist) {
 		return employeeServices.save(pharmacist);
 	}
