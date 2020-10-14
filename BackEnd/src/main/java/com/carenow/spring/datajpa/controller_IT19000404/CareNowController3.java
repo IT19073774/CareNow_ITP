@@ -35,13 +35,13 @@ public class CareNowController3 {
 		return employeeServices.findByType("RECEPTIONIST");
 	}
 	
-	@PostMapping(path = "/saveReceptionist")
-	public Employee saveReceptionist(@RequestBody Employee receptionist) {
+	@PostMapping(path = "/saveReceptionist/{password}")
+	public Employee saveReceptionist(@RequestBody Employee receptionist, @PathVariable String password) {
 		return employeeServices.save(receptionist);
 	}
+
 	
-	
-	@PutMapping(path = "/updateReceptionist")
+	@PostMapping(path = "/updateReceptionist")
 	public Employee updateReceptionist(@RequestBody Employee receptionist) {
 		return employeeServices.save(receptionist);
 	}
@@ -75,7 +75,7 @@ public class CareNowController3 {
 	}
 	
 	
-	@PutMapping(path = "/updateCashier")
+	@PostMapping(path = "/updateCashier")
 	public Employee updateCashier(@RequestBody Employee cashier) {
 		return employeeServices.save(cashier);
 	}
@@ -163,8 +163,8 @@ public class CareNowController3 {
 		return doctors;
 	}
 	
-	@PostMapping(path = "/saveDoctor/{education}")
-	public void saveOnlyDoctor(@RequestBody Employee doc,@PathVariable String education) {
+	@PostMapping(path = "/saveDoctor/{education}/{password}")
+	public void saveOnlyDoctor(@RequestBody Employee doc,@PathVariable String education, @PathVariable String password) {
 		
 		Employee addedDoc = saveDoctorEmp(doc);
 		
@@ -174,6 +174,7 @@ public class CareNowController3 {
 		doconly.setColor(generateRGB());
 		saveDoctor(doconly);
 	}
+	
 	
 	
 	@DeleteMapping("/deleteDoctor/{id}")
